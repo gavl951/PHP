@@ -21,7 +21,8 @@ $EmailValid = filter_var($Email, FILTER_VALIDATE_EMAIL);
 $Address = $_POST['Address'];
 $Mobile = $_POST['Mobile'];
 $StaffNum = $_POST['StaffNum'];
+$StaffNum = $_POST['BranchNo'];
 
-$id = $gateway->insertCustomer($Name, $Address, $Mobile, $Email, $StaffNum);
+$id = $gateway->insertCustomer($Name, $Address, $Mobile, $Email, $StaffNum, $BranchNo);
 
 header('Location: home.php');

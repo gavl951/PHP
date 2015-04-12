@@ -16,12 +16,13 @@ $statement = $gateway->getCustomers();
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <script type="text/javascript" src="js/customer.js"></script>
+        <link href="css/styles.css" rel="stylesheet">
         <title></title>
     </head>
    
     <body>
     
-        <?php require 'toolbar.php' ?>
+        <?php require 'toolbar2.php' ?>
         <?php
         if (isset($message)) {
             echo '<p>'.$message.'</p>';
@@ -38,6 +39,7 @@ $statement = $gateway->getCustomers();
                     <th>Mobile</th>
                     <th>Email</th>
                     <th>Staff Number</th>
+                    <th>Branch Number</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -52,6 +54,7 @@ $statement = $gateway->getCustomers();
                     echo '<td>' . $row['Mobile'] . '</td>';
                     echo '<td>' . $row['Email'] . '</td>';
                     echo '<td>' . $row['StaffNum'] . '</td>';
+                    echo '<td>' . $row['BranchNo'] . '</td>';
                     echo '<td>'
                     . '<a href="viewCustomer.php?id='.$row['id'].'">&nbsp;<button type="button" class="btn btn-default">View</button></a> &nbsp; '
                     . '<a href="editCustomerForm.php?id='.$row['id'].'"><button type="button" class="btn btn-default">Edit</button></a> &nbsp;'

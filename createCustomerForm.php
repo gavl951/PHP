@@ -12,7 +12,9 @@ require 'ensureUserLoggedIn.php';
         <meta charset="UTF-8">
         <title></title>
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link href="css/styles.css" rel="stylesheet">
         <script type="text/javascript" src="js/customer.js"></script>
+        
     </head>
     <body>
         <?php require 'toolbar.php' ?>
@@ -63,6 +65,13 @@ require 'ensureUserLoggedIn.php';
                     </tr>
                     <tr>
                         <td>Staff Number</td>
+                        <td>
+                            <input type="text" name="StaffNum" value="" />
+                            <span id="StaffNumError" class="error"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Branch Number</td>
                         <td>
                             <input type="text" name="StaffNum" value="" />
                             <span id="StaffNumError" class="error"></span>

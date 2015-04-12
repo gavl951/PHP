@@ -26,6 +26,7 @@ $statement = $gateway->getCustomerById($id);
         <meta charset="UTF-8">
         <script type="text/javascript" src="js/programmer.js"></script>
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link href="css/styles.css" rel="stylesheet">
         <title></title>
     </head>
     <body>
@@ -61,6 +62,9 @@ $statement = $gateway->getCustomerById($id);
                     echo '<tr>';
                     echo '<td>Staff Number</td>'
                     . '<td>' . $row['StaffNum'] . '</td>';
+                    echo '</tr>';
+                    echo '<td>Branch Number</td>'
+                    . '<td>' . $row['BranchNo'] . '</td>';
                     echo '</tr>';
                 ?>
             </thead>

@@ -6,15 +6,17 @@ class Customer {
     private $Mobile;
     private $Email;
     private $StaffNum;
+    private $BranchNo;
 
     
-    public function __construct($id, $n, $a, $m, $e, $sn) { // constructor
+    public function __construct($id, $n, $a, $m, $e, $sn, $bno) { // constructor
         $this->id = $id;
         $this->Name = $n;
         $this->Address = $a;
         $this->Mobile = $m;
         $this->Email = $e;
         $this->StaffNum = $sn;
+        $this->BranchNo = $bno;
 
     }
     
@@ -24,5 +26,6 @@ class Customer {
     public function getMobile() { return $this->Mobile; }
     public function getEmail() { return $this->Email; }
     public function getStaffNum() { return $this->StaffNum; }
+    public function getBranchNo() { return $this->BranchNo; }
 
 }

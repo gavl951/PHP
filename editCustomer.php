@@ -24,13 +24,14 @@ $Mobile = $_POST['Mobile'];
 $Email = $_POST['Email'];
 $StaffNum= $_POST['StaffNum'];
 $Address= $_POST['Address'];
+$Address= $_POST['BranchNo'];
 
 //echo '<pre>';
 //print_r($_POST);
 //echo '</pre>';
 
 
-$gateway->updateCustomer($id, $Name, $Address, $Mobile, $Email, $StaffNum);
+$gateway->updateCustomer($id, $Name, $Address, $Mobile, $Email, $StaffNum, $BranchNo);
 
 header('Location: home.php');
 

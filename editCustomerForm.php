@@ -28,6 +28,7 @@ $row = $statement->fetch(PDO::FETCH_ASSOC);
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link href="css/styles.css" rel="stylesheet">
         <meta charset="UTF-8">
         <title></title>
        <!-- <script type="text/javascript" src="js/programmer.js"></script> -->
@@ -135,6 +136,26 @@ $row = $statement->fetch(PDO::FETCH_ASSOC);
                                 <?php
                                 if (isset($errorMessage) && isset($errorMessage['StaffNum'])) {
                                     echo $errorMessage['StaffNum'];
+                                }
+                                ?>
+                            </span>
+                        </td>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td>Branch Number</td>
+                        <td>
+                            <input type="text" name="BranchNo" value="<?php
+                                if (isset($_POST) && isset($_POST['BranchNo'])) {
+                                    echo $_POST['BranchNo'];
+                                }
+                                else { echo $row['BranchNo'];
+                                }
+                            ?>" />
+                            <span id="BranchNumberError" class="error">
+                                <?php
+                                if (isset($errorMessage) && isset($errorMessage['BranchNo'])) {
+                                    echo $errorMessage['BranchNo'];
                                 }
                                 ?>
                             </span>

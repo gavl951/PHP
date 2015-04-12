@@ -40,10 +40,10 @@ class CustomerTableGateway {
         return $statement;
     }
 
-    public function insertCustomer($n, $a, $m, $e, $sn) {
+    public function insertCustomer($n, $a, $m, $e, $sn, $bno) {
         $sqlQuery = "INSERT INTO customers " .
-                "(Name, Address, Mobile, Email, StaffNum) " .
-                "VALUES (:Name, :Address, :Mobile, :Email, :StaffNum)";
+                "(Name, Address, Mobile, Email, StaffNum, BranchNo) " .
+                "VALUES (:Name, :Address, :Mobile, :Email, :StaffNum, :BranchNo)";
 
         $statement = $this->connection->prepare($sqlQuery);
         $params = array(
@@ -52,6 +52,7 @@ class CustomerTableGateway {
             "Mobile" => $m,
             "Email" => $e,
             "StaffNum" => $sn,
+            "BranchNo" => $bno,
         );
 
         $status = $statement->execute($params);
@@ -82,14 +83,15 @@ class CustomerTableGateway {
         return ($statement->rowCount() == 1);
     }
 
-    public function updateCustomer($id, $n, $a, $m, $e, $sn) {
+    public function updateCustomer($id, $n, $a, $m, $e, $sn, $bno) {
         $sqlQuery =
                 "UPDATE customers SET " .
                 "Name = :Name, " .
                 "Address = :Address, " .
                 "Mobile = :Mobile, " .
                 "Email = :Email, " .
-                "StaffNum = :StaffNum " .
+                "StaffNum = :StaffNum, " .
+                "BranchNo = :BranchNo " .
                 "WHERE id = :id";
 
 
@@ -101,6 +103,7 @@ class CustomerTableGateway {
             "Mobile" => $m,
             "Email" => $e,
             "StaffNum" => $sn,
+            "BranchNo" => $bno
         );
 
         //echo '<pre>';
